@@ -1,1 +1,16 @@
 print("2")
+local Player = game.Players.LocalPlayer
+
+local Offset = -0.77
+
+if Player.Character then
+	local Humanoid = Player.Character:WaitForChild("Humanoid")
+
+	Humanoid.CameraOffset = Vector3.new(0, -0.4,Offset)
+end
+
+Player.CharacterAdded:Connect(function(Character)
+	local Humanoid = Character:WaitForChild("Humanoid")
+	
+	Humanoid.CameraOffset = Vector3.new(0, -0.4,Offset)
+end)
